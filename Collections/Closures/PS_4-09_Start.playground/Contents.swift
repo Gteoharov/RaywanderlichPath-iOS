@@ -38,7 +38,7 @@
 
 // TODO: Write solution here
 let names = ["Stavreca", "Sashko", "Zvezsko", "Mishanera", "Bob"]
-let concatenationNames = names.reduce("") { $0 + $1 }
+let concatenationNames = names.reduce("") { $0 + " " + $1 }
 concatenationNames
 /*:
  Using the same `names` array, first filter the array to contain only names which have more than four characters in them, and then create the same concatenation of names as in the above exercise. (Hint: you can chain these operations together.)
@@ -46,7 +46,7 @@ concatenationNames
 
 
 // TODO: Write solution here
-let filteredNames = names.filter { $0.count > 4 }.reduce("") { $0 + $1 }
+let filteredNames = names.filter { $0.count > 4 }.reduce("") { $0 + " " + $1 }
 filteredNames
 
 /*:
@@ -64,5 +64,5 @@ underEighteen
 
 
 // TODO: Write solution here
-let adultEightTeen = namesAndAges.filter { $0.value > 18}.map { $0.key }
+let adultEightTeen = namesAndAges.filter { $0.value >= 18}.map { $0.key }
 adultEightTeen
