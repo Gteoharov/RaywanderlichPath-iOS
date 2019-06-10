@@ -14,4 +14,23 @@ enum Weekday: CaseIterable {
 Weekday.allCases
 
 var weekday: Weekday = .tuesday
-weekday.advance(by: 6)
+weekday.advance(by: 5)
+
+struct Time {
+    var day: Weekday
+    var hour: UInt
+    
+    init(day: Weekday, hour: UInt = 0) {
+        self.day = day
+        self.hour = hour
+    }
+    
+    mutating func advance(byHours hourCount: UInt) {
+        
+    }
+}
+
+var time = Time(day: .monday)
+
+
+
