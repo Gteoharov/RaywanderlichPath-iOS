@@ -40,3 +40,11 @@ struct Time {
 let time = Time(day: .monday)
 var advancedTime = time.advanced(byHours: 24 * 3 + 5)
 time
+
+enum Mathematics {
+    static func getLenght(x: Double, y: Double) -> Double {
+        return (x * x + y * y).squareRoot()
+    }
+}
+
+Mathematics.getLenght(x: 3, y: 4)
