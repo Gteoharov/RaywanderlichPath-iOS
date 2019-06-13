@@ -1,21 +1,30 @@
 import UIKit
 
-struct Actor {
+class Actor {
     let name: String
     var filmography: [String] = []
     
-    mutating func singOnForSequal(franchiseName: String) {
+    init(name: String, filmography: [String]) {
+        self.name = name
+        self.filmography = filmography
+    }
+    
+    func singOnForSequal(franchiseName: String) {
         filmography.append("Upcoming \(franchiseName) sequel")
     }
 }
 
-var gotgActor = Actor(name: "Zoe Saldana", filmography: ["Guardians of the galaxy"])
+let gotgActor = Actor(name: "Zoe Saldana", filmography: ["Guardians of the galaxy"])
 gotgActor.filmography.append("Avatar")
 
-var starTrekStar = gotgActor
+let starTrekStar = gotgActor
 starTrekStar.filmography.append("Star Trek")
 
 var avatarStar = starTrekStar
 for franchiseName in avatarStar.filmography {
     avatarStar.singOnForSequal(franchiseName: franchiseName)
 }
+
+gotgActor.filmography
+starTrekStar.filmography
+avatarStar.filmography
