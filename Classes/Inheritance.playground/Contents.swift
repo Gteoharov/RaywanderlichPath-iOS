@@ -66,6 +66,12 @@ class StudentAthlete: Student {
     var isEligible: Bool {
         return grades.filter { $0.letter == "F" } .count < 3
     }
+    var sports: [String]
+    
+    init(firstName: String, lastName: String, sports: [String]) {
+        self.sports = sports
+        super.init(firstName: firstName, lastName: lastName)
+    }
     
     override var grades: [Grade] {
         didSet {
@@ -77,7 +83,7 @@ class StudentAthlete: Student {
 }
 
 let jessy = SchoolBandMember(firstName: "Jessy", lastName: "Catterwaul")
-let kaloyan = StudentAthlete(firstName: "Kaloqn", lastName: "Stoqnov")
+let kaloyan = StudentAthlete(firstName: "Kaloqn", lastName: "Stoqnov", sports: ["Wrestling", "Football"])
 
 let array = [jane, jessy, kaloyan]
 
